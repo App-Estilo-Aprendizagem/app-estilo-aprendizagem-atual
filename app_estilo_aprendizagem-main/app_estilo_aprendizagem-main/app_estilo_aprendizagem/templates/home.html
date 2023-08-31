@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="d-flex flex-column align-items-center">
+    <div class="container-fluid text-bg p-4 d-flex flex-row align-items-center justify-content-between" style= "background-image: linear-gradient(to right, rgba(0,155,0,1), rgba(255,0,0,0));">
+        <div><h1>Seja bem vindo {{ request.user.nome }}</h1></div>
+        <div class="d-flex flex-column" >
+        <a class="navbar-brand">O que você deseja?</a>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'listar' %}">Veja seus testes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'formulario' %}">Realizar um teste</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'turmas' %}">Ver turmas</a>
+            </li>
+          
+          </ul>
+          
+        </div>
+    </div>
+</div>
+{% endblock %}

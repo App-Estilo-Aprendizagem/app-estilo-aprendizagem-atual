@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block conteudo %}
+
+<div class="form-outline mb-4" align="center">
+    <div class="col-md-3">
+        <h1>Login</h1>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3" >
+                    {{ frm.matricula.label }}
+                    {{frm.matricula|add_class:'form-control'}}
+                    {{ frm.senha.label }}
+                    {{frm.senha|add_class:'form-control'}}
+                    <button type="submit" class="btn btn-primary btn-block mb-4"">Logar</button>
+
+                </div>
+            </form>
+
+    </div>
+</div>
+{% endblock %}
